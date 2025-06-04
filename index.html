@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A philosophical and ethical blog exploring land ownership, human impact, and our role on Earth" />
+  <title>Human Footprints: A Journey Through Ethics, Earth, and Existence</title>
+  <link rel="icon" href="https://media.istockphoto.com/id/2170118552/vector/sustainability-earth-hand-care-logo-icons.jpg?s=1024x1024&w=is&k=20&c=s5CmvcRm6boW50EWc1xCKbGRv_LdLtLRMtxH44ajehM=" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
+
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 fade-in">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700 dark:text-blue-300">Human Footprints</h1>
+      <nav class="space-x-4 text-sm flex items-center">
+        <a href="#intro" class="hover:underline">Home</a>
+        <a href="#topics" class="hover:underline">Topics</a>
+        <a href="#about" class="hover:underline">About</a>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="ml-4 p-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+          🌙
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="intro" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-green-100 to-blue-100 dark:from-gray-800 dark:to-gray-900 text-center p-6 fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">A Journey Through Ethics, Earth, and Existence</h2>
+    <p class="text-lg md:text-xl max-w-2xl text-gray-700 dark:text-gray-300">
+      Exploring who owns the land, why nature is suffering, and whether humanity deserves redemption — with insights, facts, and deep reflections.
+    </p>
+    <a href="#topics" class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition duration-300">Explore Topics</a>
+  </section>
+
+  <!-- Tabs Section for Blog Navigation -->
+  <section class="max-w-4xl mx-auto mt-16 px-4 fade-in" id="topics">
+    <div class="flex justify-center space-x-2 mb-6">
+      <button data-tab-button="why-earth" class="px-4 py-2 rounded-lg bg-blue-600 text-white">Why Earth</button>
+      <button data-tab-button="land-law" class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700">Land & Law</button>
+      <button data-tab-button="climate" class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700">Climate</button>
+    </div>
+
+    <article id="why-earth-content" data-tab-content>
+      <h3 class="text-2xl font-semibold mb-4">Why do we treat Earth as property?</h3>
+      <p class="mb-4">Human societies have long claimed ownership of land and resources, shaping laws and economies. But Earth itself is a shared habitat and life-support system, raising deep ethical questions about property and stewardship.</p>
+
+      <table class="w-full text-left mb-6 border border-gray-300 dark:border-gray-600 rounded-md">
+        <thead class="bg-blue-200 dark:bg-blue-700">
+          <tr>
+            <th class="px-4 py-2 border-b border-gray-300 dark:border-gray-600">Aspect</th>
+            <th class="px-4 py-2 border-b border-gray-300 dark:border-gray-600">Viewpoint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+            <td class="px-4 py-2 border-b border-gray-300 dark:border-gray-600">Legal</td>
+            <td class="px-4 py-2 border-b border-gray-300 dark:border-gray-600">Land ownership grants rights to use, sell, or lease land within state laws.</td>
+          </tr>
+          <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+            <td class="px-4 py-2 border-b border-gray-300 dark:border-gray-600">Ethical</td>
+            <td class="px-4 py-2 border-b border-gray-300 dark:border-gray-600">Land stewardship focuses on responsibility towards environment and future generations.</td>
+          </tr>
+          <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+            <td class="px-4 py-2">Cultural</td>
+            <td class="px-4 py-2">Some indigenous cultures see land as communal and sacred rather than owned.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button onclick="openModal('Why do you think Earth is treated as property?')" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+        Reflect
+      </button>
+    </article>
+
+    <article id="land-law-content" data-tab-content class="hidden">
+      <h3 class="text-2xl font-semibold mb-4">Land Ownership and Legal Rights</h3>
+      <p class="mb-4">In India and many other countries, owning land does not equate to owning all its mineral wealth. Governments maintain rights over minerals and natural resources due to their strategic and societal importance.</p>
+
+      <canvas id="mineralChart" class="mb-6 max-w-full" height="200"></canvas>
+
+      <p class="mb-4">This chart illustrates the typical mineral ownership rights in many countries:</p>
+
+      <button onclick="openModal('What rights should land ownership really give?')" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+        Reflect
+      </button>
+    </article>
+
+    <article id="climate-content" data-tab-content class="hidden">
+      <h3 class="text-2xl font-semibold mb-4">Climate Change and Human Impact</h3>
+      <p class="mb-4">Human activity has accelerated climate change through resource extraction, pollution, and habitat destruction. Balancing growth with sustainability requires ethical choices and global cooperation.</p>
+
+      <canvas id="co2Chart" class="mb-6 max-w-full" height="200"></canvas>
+
+      <p class="mb-4">Global CO2 emissions by sector, showing areas needing urgent action.</p>
+
+      <button onclick="openModal('How can we balance growth with nature?')" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+        Reflect
+      </button>
+    </article>
+  </section>
+
+  <!-- Modal Component -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-11/12 md:w-1/2">
+      <h3 id="modal-question" class="text-lg font-semibold mb-4 text-gray-900 dark:text-white"></h3>
+      <textarea placeholder="Write your reflection here..." class="w-full p-2 border rounded mb-4 dark:bg-gray-700 dark:text-white"></textarea>
+      <div class="text-right">
+        <button onclick="closeModal()" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded mr-2 dark:bg-gray-700 dark:text-white">Cancel</button>
+        <button onclick="closeModal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="max-w-4xl mx-auto my-16 px-4 fade-in">
+    <h3 class="text-2xl font-semibold mb-4">About This Project</h3>
+    <p>This blog is designed to provoke thought and reflection on humanity’s relationship with the Earth, land ownership, and environmental responsibility. It uses semantic HTML, Tailwind CSS for styling, and JavaScript for interactivity and data visualization.</p>
+  </section>
+
+  <script src="./main.js"></script>
+</body>
+</html>
